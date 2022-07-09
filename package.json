@@ -12,8 +12,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "npm run start-api && react-scripts start",
-    "start-api": "cd api && . venv/bin/activate/flask run",
+    "start": "react-scripts start",
+    "start-api": "cd api && venv/bin/flask run",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
