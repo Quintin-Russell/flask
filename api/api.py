@@ -1,11 +1,12 @@
 from flask import Flask, jsonify
-from flask_cors import CORS
+import requests
+from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
 CORS(app)
 
-@app.route('/hi')
+@app.route('/hi/')
 def say_hi():
-    resp = Flask.Response({"message": "sup stoker"})
-    resp.headers['Access-Control-Allow-Origin'] = '*'
-    return jsonify(resp)
+    req = requests.get("https://dog.ceo/api/breeds/list/all")
+    # jsonReq = req.content.decode('utf-8')
+    return req.content
